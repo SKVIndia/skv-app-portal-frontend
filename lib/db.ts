@@ -1,4 +1,4 @@
-import { Pool } from "pg"; // ✅ this line is MISSING
+import { Pool } from "pg"; 
 
 export function getDB() {
   try {
