@@ -1,9 +1,11 @@
+import { Pool } from "pg"; // ✅ this line is MISSING
+
 export function getDB() {
   try {
     const pool = new Pool({
       connectionString: process.env.DATABASE_URL,
       ssl: {
-        rejectUnauthorized: false, // for Neon or similar
+        rejectUnauthorized: false,
       },
     });
     return pool;
