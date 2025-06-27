@@ -1,11 +1,14 @@
-// lib/db.ts
-import { Pool } from "pg";
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }, // Required for Neon
-});
-
 export function getDB() {
-  return pool;
+  try {
+    const pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false, // for Neon or similar
+      },
+    });
+    return pool;
+  } catch (err) {
+    console.error("❌ Failed to connect to DB:", err);
+    throw err;
+  }
 }
