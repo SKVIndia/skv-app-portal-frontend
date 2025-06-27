@@ -2,7 +2,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { SignJWT } from "jose";
 import { getDB } from "@/lib/db";
 
-const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || "your-secret-key-change-this");
+const JWT_SECRET = new TextEncoder().encode(process.env.JWT_SECRET || "yrngv85vnp4otn8ay8tsepy5p85ytn0943yn84tyn9tc5iyawc4t8wc5y8tq3pt9nthkhugesi");
 
 export async function POST(request: NextRequest) {
   try {
